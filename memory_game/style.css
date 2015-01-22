@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #23922a;
+}
+
+header {
+  text-align: center;
+  border-bottom: 5px solid #8b9223;
+  overflow: auto;
+  padding-bottom: 1em;
+  background: #173a0e;
+  color: #8b9223;
+}
+
+header h1 {
+  padding: 1em 0 .5em;;
+  font-size: 6em;
+  letter-spacing: .12em;
+  font-family: 'Bangers', cursive;
+  }
+
+.pirate-o {
+  font-family: "memory-header";
+  font-size: .9em;
+}
+
+.secondary-game-info {
+  font-size: 1.3em;
+}
+
+.lives-remaining {
+  position: inline-block;
+  float: left;
+  margin-left: 10%;
+  font-family: "memory-header", times;
+}
+
+.clock {
+  float: right;
+  margin-right: 10%;
+  font-family: 'Bangers';
+  letter-spacing: .12em;
+}
+
+.game-board-area {
+  display: table;
+  width: 85%;
+  margin: 3em auto;
+  /*border: 3px #8b9223 solid;*/
+  min-height: 600px;
+
+}
+
+
+.game-tile {
+  position: relative;
+  display: inline-block;
+  padding-left: 3em;
+}
+
+
+.checkable__input {
+  opacity: 0;
+  position: absolute;
+  z-index: 10000;
+}
+
+
+
+.checkable__label:before {
+  font-family: "memory-header";
+  content: ' ';
+  position: absolute;
+  background: #173a0e;
+  left: 0px;
+  top: 0.2em;
+  right: 0;
+  width: 8em;
+  height: 8em;;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+
+.checkable__input:checked + .checkable__label:before {
+  content: 'c';
+  color: #92238b;
+  font-size: 1em;
+}
+
+.game-tile-wrapper {
+  position: relative;
+  display: block-inline;
+  width: 30%;
+  display: table-cell;
+}
+
+.game-tile-wrapper:before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+  width: 0;
+}
