@@ -18,9 +18,9 @@ var userLetter;
 var validWords = hangmanWords.filter(getValid);
 var gameWord = getWord();
 var triesRemaining = 5;
-var triesMessage = "Go to hell " + triesRemaining + " times";
+var triesMessage = "You have " + triesRemaining + " tries until you fall into a firey inferno";
 
-
+document.querySelector('.remaining-guesses').textContent = triesMessage;
 
 
 function userGuess(guessValue) {
@@ -51,7 +51,6 @@ var dashedWord = displayWord.map(function (ch) {
 });
 
 var finalDisplay = dashedWord.join(' ');
-
 document.querySelector('.hidden-word').textContent = finalDisplay;
 
 function checkLetter () {
@@ -66,9 +65,14 @@ function checkLetter () {
   }
       if ( correct === false) {
         triesRemaining = --triesRemaining;
-      }
+        triesMessage = "You have " + triesRemaining + " tries until you fall into a firey inferno";
+        document.querySelector('.remaining-guesses').textContent = triesMessage;
 
+
+
+      }
       finalDisplay = dashedWord.join(' ');
       document.querySelector('.hidden-word').textContent = finalDisplay;
-      document.querySelector('.remaining-guesses').textContent = triesMessage;
+
+
 }
