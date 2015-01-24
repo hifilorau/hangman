@@ -14,13 +14,21 @@ var hangmanWords = [
 "come","made","may","part"
 ];
 
+var incorrectResult = [];
 var userLetter;
 var validWords = hangmanWords.filter(getValid);
 var gameWord = getWord();
 var triesRemaining = 5;
 var triesMessage = "You have " + triesRemaining + " tries until you fall into a firey inferno";
+var textInput = document.getElementById("text-input");
 
-document.querySelector('.remaining-guesses').textContent = triesMessage;
+var updateTries = function() {
+  document.querySelector('.remaining-guesses').textContent = triesMessage;
+}
+
+updateTries();
+
+
 
 
 function userGuess(guessValue) {
@@ -51,7 +59,12 @@ var dashedWord = displayWord.map(function (ch) {
 });
 
 var finalDisplay = dashedWord.join(' ');
-document.querySelector('.hidden-word').textContent = finalDisplay;
+
+var updateDisplay = function() {
+  document.querySelector('.hidden-word').textContent = finalDisplay;
+}
+
+updateDisplay();
 
 function checkLetter () {
   var correct = false;
@@ -61,18 +74,22 @@ function checkLetter () {
         dashedWord[i] = userLetter;
         console.log("FIRE!");
         correct = true;
+        textInput.value = "";
     }
   }
-      if ( correct === false) {
+      if (correct === false) {
         triesRemaining = --triesRemaining;
         triesMessage = "You have " + triesRemaining + " tries until you fall into a firey inferno";
-        document.querySelector('.remaining-guesses').textContent = triesMessage;
-
-
+        updateTries();
+        var incorrectLetter = userLetter;
+        incorrectResult.push(incorrectLetter);
+        document.querySelector('.incorrect-letters').textContent = incorrectResult;
+        textInput.value = "";
 
       }
+
       finalDisplay = dashedWord.join(' ');
-      document.querySelector('.hidden-word').textContent = finalDisplay;
+      updateDisplay();
 
 
 }
