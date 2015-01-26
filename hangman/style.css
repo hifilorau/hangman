@@ -2,8 +2,13 @@
 body {
   font-family:'Lato', sans-serif;
   line-height: 1.4em;
-  background: #c0bdba;
-  color: #444;
+  background: url("http://gangaproductionhouse.com/wp-content/uploads/2014/08/Texture-Background-Dark-Spot-HD.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;;
+  background-size: cover;
+  color: #821111;
   padding: 2em;
 }
 
