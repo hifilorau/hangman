@@ -4,24 +4,34 @@
     <meta charset="utf-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Nosifer' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="https://fontastic.s3.amazonaws.com/wW9EenP8nwvRqEySGEnPBk/icons.css" rel="stylesheet">
   </head>
   <body>
       <header>
 
       </header>
-      <h1>This is hangdude beta</h1>
+
+    <div class="game-wrapper">
+
+      <h1>Fortune of DOOM!</h1>
 
       <h3 class="remaining-guesses" id="remaining"></h3>
 
       <div class="the-word"><h2 class ="hidden-word"></h2>
       </div>
 
-      <p>
-        <input type="text" onchange="userGuess(this.value)" maxlength="1" id ="text-input">
-        <button onclick='checkLetter()'>Guess!</button>
-      </p>
+      <div class = "guess-wrapper">
+        <p>
+           Place your guess in the box below, good human.
+        </p>
+        <input type="text" onchange="userGuess(this.value)" maxlength="1" id ="text-input" placeholder="a">
+        <button onclick='checkLetter()'>DECIDE YOUR FATE</button>
+      </div>
 
       <h1 class="incorrect-letters"></h1>
+    </div>
 
       </div>
 
